@@ -1,0 +1,7 @@
+import { PixelSpriteData } from '../types/pixel';
+const t={'.':'transparent'};
+export const stoneWall:PixelSpriteData={id:'stone-wall',width:64,height:28,palette:{...t,S:'#2d343d',D:'#171b22',L:'#454c57'},pixels:Array.from({length:28},(_,y)=>Array.from({length:64},(_,x)=>(x+y)%13===0?'L':(x%11===0||y%7===0)?'D':'S').join(''))};
+export const stoneFloor:PixelSpriteData={id:'stone-floor',width:64,height:18,palette:{...t,S:'#303038',D:'#17191f',L:'#4a4745'},pixels:Array.from({length:18},(_,y)=>Array.from({length:64},(_,x)=>(x%16===0||y%6===0)?'D':(x+y)%17===0?'L':'S').join(''))};
+export const torch:PixelSpriteData={id:'torch',width:8,height:14,palette:{...t,W:'#5b3a22',L:'#f0c36a',O:'#e77f32'},pixels:['...L....','..LOL...','..OOO...','...O....','...W....','...W....','..WWW...','...W....','...W....','...W....','........','........','........','........']};
+export const barrel:PixelSpriteData={id:'barrel',width:12,height:14,palette:{...t,W:'#6b4426',D:'#2b1b12',G:'#c8963e'},pixels:['..DDDDDD..','.DWWWWWWD.','DWWDWDWWWD','DWWWWWWWWD','DGGGGGGGGD','DWWWWWWWWD','DWWDWDWWWD','.DWWWWWWD.','..DDDDDD..','..........','..........','..........','..........','..........']};
+export const crate:PixelSpriteData={id:'crate',width:14,height:12,palette:{...t,W:'#6b4426',D:'#2b1b12'},pixels:['DDDDDDDDDDDDDD','DWWWWWWWWWWWWD','DWDWWWWWWWWDWD','DWWDWWWWWWDWWD','DWWWDWWWWDWWWD','DWWWWDWWDWWWWD','DWWWWWWWWWWWWD','DDDDDDDDDDDDDD','..............','..............','..............','..............']};

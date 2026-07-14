@@ -1,0 +1,2 @@
+import { GameState } from '../types/game';import { TraitMeter } from './TraitMeter';import { recognition } from '../content/trial';
+export function ReputationPanel({state}:{state:GameState}){return <section className="panel"><h2>{state.title}</h2>{state.selectedChoice&&<p className="recognition">{recognition[state.selectedChoice]}</p>}<TraitMeter trait="compassion" value={state.traits.compassion}/><TraitMeter trait="courage" value={state.traits.courage}/><TraitMeter trait="ambition" value={state.traits.ambition}/></section>}

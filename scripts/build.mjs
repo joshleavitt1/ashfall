@@ -1,0 +1,1 @@
+import {mkdirSync,copyFileSync,writeFileSync} from 'node:fs';mkdirSync('dist',{recursive:true});copyFileSync('index.html','dist/index.html');writeFileSync('dist/README.txt','Ashfall source prototype built. Use Vite in a normal networked environment for production bundling.');console.log('dist prepared');
