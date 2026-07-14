@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+const initial={trialCompleted:false,selectedChoice:null,traits:{compassion:2,courage:2,ambition:1,wisdom:0},title:'THE UNKNOWN'};
+const clone=x=>JSON.parse(JSON.stringify(x));
+function applyChoice(state,choice){const next=clone(state);next.trialCompleted=true;next.selectedChoice=choice;if(choice==='compassion'){next.traits.compassion=Math.min(5,next.traits.compassion+2);next.title='PROTECTOR OF THE FORGOTTEN'}if(choice==='order'){next.traits.courage=Math.min(5,next.traits.courage+1);next.traits.wisdom=Math.min(5,next.traits.wisdom+1);next.title='KEEPER OF ORDER'}if(choice==='punishment'){next.traits.ambition=Math.min(5,next.traits.ambition+2);next.title='THE IRON HAND'}return next}
+assert.equal(applyChoice(initial,'compassion').traits.compassion,4);assert.equal(applyChoice(initial,'order').traits.courage,3);assert.equal(applyChoice(initial,'order').traits.wisdom,1);assert.equal(applyChoice(initial,'punishment').traits.ambition,3);console.log('✓ game reducer outcomes pass');

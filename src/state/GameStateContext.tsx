@@ -1,0 +1,4 @@
+import { createContext,useContext,useEffect,useMemo,useState } from 'react';import { ChoiceId,GameState } from '../types/game';import { applyChoice,resetGame } from './gameReducer';import { clearGameState,loadGameState,saveGameState } from './persistence';
+type Ctx={state:GameState; choose:(c:ChoiceId)=>void; reset:()=>void};const GameCtx=createContext<Ctx|null>(null);
+export function GameStateProvider({children}:{children:React.ReactNode}){const [state,setState]=useState<GameState>(()=>loadGameState());useEffect(()=>saveGameState(state),[state]);const value=useMemo(()=>({state,choose:(c:ChoiceId)=>setState(s=>applyChoice(s,c)),reset:()=>{clearGameState();setState(resetGame())}}),[state]);return <GameCtx.Provider value={value}>{children}</GameCtx.Provider>}
+export function useGame(){const ctx=useContext(GameCtx);if(!ctx)throw Error('useGame outside provider');return ctx}

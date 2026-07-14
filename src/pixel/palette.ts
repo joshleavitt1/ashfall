@@ -1,0 +1,2 @@
+export const colors={void:'#050607',ink:'#0b1016',sky:'#0b1728',sky2:'#14243a',mount1:'#20334b',mount2:'#13263a',pine:'#071b1d',pine2:'#0d2825',stone:'#59606a',stone2:'#2d343d',wood:'#5b3a22',wood2:'#2b1b12',gold:'#c8963e',gold2:'#f0c36a',cream:'#eadfc7',red:'#9e4544',blue:'#66839c',violet:'#8060a7',shadow:'#080a0d',grass:'#182a1d',dirt:'#60472b',amber:'#e7a64b'};
+export const transparent={'.':'transparent'};
