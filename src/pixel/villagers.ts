@@ -1,0 +1,6 @@
+import { PixelSpriteData } from '../types/pixel';
+const p={'.':'transparent',H:'#3a2418',F:'#d3a075',G:'#748345',D:'#342318',R:'#7f3535',B:'#66839c',W:'#d6d0bd',K:'#151719',V:'#8060a7'};
+export const villager:PixelSpriteData={id:'villager',width:10,height:14,palette:p,pixels:['...HHH....','..HFFFH...','..F.K.F...','...FFF....','..GGGGG...','.G.GGG.G..','...GGG....','...GGG....','..D...D...','..D...D...','.DD...DD..','..........','..........','..........']};
+export const healer:PixelSpriteData={...villager,id:'healer',palette:{...p,G:'#d6d0bd',B:'#66839c'},pixels:['...HHH....','..HFFFH...','..F.K.F...','...FFF....','..WWWWW...','.W.WBW.W..','...WWW....','...WBW....','..D...D...','..D...D...','.DD...DD..','..........','..........','..........']};
+export const childSprite:PixelSpriteData={id:'child',width:9,height:12,palette:{...p,G:'#6f7f42'},pixels:['...HH....','..HFFH...','..F.KF...','...FF....','..GGG....','.G.G.G...','..GGG....','..D.D....','.DD.DD...','.........','.........','.........']};
+export const guard:PixelSpriteData={...villager,id:'guard',palette:{...p,G:'#474c56',R:'#9e4544'},pixels:['...RRR....','..WWWWW...','..W.K.W...','...WWW....','..GGGGG...','.G.GGG.G..','...GGG....','...GGG....','..D...D...','..D...D...','.DD...DD..','..........','..........','..........']};

@@ -1,0 +1,4 @@
+import { ChoiceId, GameState } from '../types/game';
+export const initialGameState:GameState={trialCompleted:false,selectedChoice:null,traits:{compassion:2,courage:2,ambition:1,wisdom:0},title:'THE UNKNOWN'};
+export function resetGame():GameState{return structuredClone(initialGameState)}
+export function applyChoice(state:GameState,choice:ChoiceId):GameState{const next=structuredClone(state);next.trialCompleted=true;next.selectedChoice=choice;if(choice==='compassion'){next.traits.compassion=Math.min(5,next.traits.compassion+2);next.title='PROTECTOR OF THE FORGOTTEN'}if(choice==='order'){next.traits.courage=Math.min(5,next.traits.courage+1);next.traits.wisdom=Math.min(5,next.traits.wisdom+1);next.title='KEEPER OF ORDER'}if(choice==='punishment'){next.traits.ambition=Math.min(5,next.traits.ambition+2);next.title='THE IRON HAND'}return next}
